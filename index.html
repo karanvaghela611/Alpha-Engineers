@@ -186,7 +186,49 @@ font-size:40px;
 }
 
 }
+}
 
+#popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+
+#popup img{
+max-width:95%;
+max-height:95%;
+border-radius:10px;
+}
+
+#closeBtn{
+position:absolute;
+top:20px;
+right:30px;
+font-size:50px;
+color:white;
+cursor:pointer;
+}
+
+.gallery img,
+.card img,
+.clients img{
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery img:hover,
+.card img:hover,
+.clients img:hover{
+transform:scale(1.03);
+}
+  
 </style>
 </head>
 
@@ -270,22 +312,22 @@ Chemical, Manufacturing, Transmission and Distribution industries.
 
 <div class="card">
 <h3>Transformer Testing</h3>
-<img src="Transformer-Testing.jpg">
+<img src="Transformer-Testing.jpg" onclick="openImage(this.src)">
 </div>
 
 <div class="card">
 <h3>Relay Testing</h3>
-<img src="Relay-Testing.jpg">
+<img src="Relay-Testing.jpg" onclick="openImage(this.src)">
 </div>
 
 <div class="card">
 <h3>CT/PT Testing</h3>
-<img src="CT&P-Testing.jpg">
+<img src="CT&P-Testing.jpg" onclick="openImage(this.src)">
 </div>
 
 <div class="card">
 <h3>Industries & Maintenance</h3>
-<img src="Industries&Maintenance.jpg">
+<img src="Industries&Maintenance.jpg" onclick="openImage(this.src)">
 </div>
 
 </div>
@@ -298,13 +340,13 @@ Chemical, Manufacturing, Transmission and Distribution industries.
 
 <div class="gallery">
 
-<img src="Material-Supply 1.jpg">
+<img src="Material-Supply 1.jpg" onclick="openImage(this.src)">
 
-<img src="Material-Supply 2.jpg">
+<img src="Material-Supply 2.jpg" onclick="openImage(this.src)">
 
-<img src="Material-Supply 3.jpg">
+<img src="Material-Supply 3.jpg" onclick="openImage(this.src)">
 
-<img src="Safety-Material.jpg">
+<img src="Safety-Material.jpg" onclick="openImage(this.src)">
 
 </div>
 
@@ -314,7 +356,7 @@ Chemical, Manufacturing, Transmission and Distribution industries.
 
 <h2 class="section-title">Major Clients</h2>
 
-<img src="Clients.jpg">
+<img src="Clients.jpg" onclick="openImage(this.src)">
 
 </section>
 <section id="contact" class="contact">
@@ -380,6 +422,20 @@ padding:20px;
 Testing • Commissioning • Maintenance • Material Supply
 
 </footer>
+<div id="popup" onclick="closeImage()">
+<span id="closeBtn">&times;</span>
+<img id="popupImg">
+</div>
 
+<script>
+function openImage(src){
+document.getElementById("popup").style.display="flex";
+document.getElementById("popupImg").src=src;
+}
+
+function closeImage(){
+document.getElementById("popup").style.display="none";
+}
+</script>
 </body>
 </html>
