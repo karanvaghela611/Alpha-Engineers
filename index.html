@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alpha Engineers</title>
+<title>ALPHA ENGINEERS</title>
 
 <style>
 
@@ -16,11 +16,12 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f5f5f5;
+background:#f5f7fa;
+color:#222;
 }
 
 nav{
-background:#0b4d8c;
+background:#003366;
 padding:15px;
 position:sticky;
 top:0;
@@ -31,13 +32,15 @@ text-align:center;
 nav a{
 color:white;
 text-decoration:none;
-margin:15px;
+margin:0 15px;
 font-weight:bold;
 }
 
 .hero{
-height:100vh;
-background:url('Cover-Page.jpg');
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('Cover-Page.jpg');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -47,46 +50,112 @@ text-align:center;
 color:white;
 }
 
-.hero h1{
-font-size:60px;
-background:rgba(0,0,0,.5);
-padding:20px;
+.hero-content h1{
+font-size:70px;
+}
+
+.hero-content p{
+font-size:22px;
+margin:20px 0;
+}
+
+.btn{
+background:#00a651;
+padding:15px 30px;
+color:white;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
 }
 
 section{
-padding:60px 20px;
+padding:70px 10%;
 }
 
-h2{
-color:#0b4d8c;
-margin-bottom:20px;
+.section-title{
 text-align:center;
+font-size:36px;
+margin-bottom:30px;
+color:#003366;
 }
 
-.image{
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
 width:100%;
 border-radius:10px;
 box-shadow:0 0 15px rgba(0,0,0,.2);
-margin-top:20px;
 }
 
-.cards{
+.stats{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+grid-template-columns:repeat(4,1fr);
+background:#003366;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.stat h2{
+font-size:40px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,.15);
+box-shadow:0 0 15px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-top:10px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+.clients img{
+width:100%;
+border-radius:10px;
 }
 
 .contact{
-background:#0b4d8c;
+background:#003366;
 color:white;
 text-align:center;
+}
+
+.contact img{
+width:100%;
+max-width:800px;
+border-radius:10px;
+margin-bottom:20px;
 }
 
 .whatsapp{
@@ -101,6 +170,23 @@ text-decoration:none;
 font-weight:bold;
 }
 
+@media(max-width:768px){
+
+.about{
+grid-template-columns:1fr;
+}
+
+.stats{
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.hero-content h1{
+font-size:40px;
+}
+
+}
+
 </style>
 </head>
 
@@ -109,91 +195,191 @@ font-weight:bold;
 <nav>
 <a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#materials">Materials</a>
 <a href="#clients">Clients</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero">
+<div class="hero-content">
 <h1>ALPHA ENGINEERS</h1>
+<p>Testing • Commissioning • Maintenance • Material Supply</p>
+<a href="#contact" class="btn">Get Quote</a>
+</div>
 </section>
 
 <section id="about">
-<h2>About Us</h2>
-<img src="About-Us.jpg" class="image">
+<h2 class="section-title">About Us</h2>
+
+<div class="about">
+
+<img src="About-Us.jpg">
+
+<div>
+
+<p>
+Alpha Engineers is a leading engineering company established in 2012.
+We specialize in Testing, Commissioning, Maintenance and Material Supply
+for Electrical Systems, Renewable Energy Projects and Industrial Plants.
+</p>
+
+<br>
+
+<p>
+We provide services up to 400KV Substations and serve Solar, Wind,
+Chemical, Manufacturing, Transmission and Distribution industries.
+</p>
+
+</div>
+
+</div>
+</section>
+<section id="stats">
+
+<div class="stats">
+
+<div class="stat">
+<h2>14+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h2>250+</h2>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>Clients</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
+
+</div>
+
 </section>
 
 <section id="services">
 
-<h2>Services</h2>
+<h2 class="section-title">Our Services</h2>
 
-<div class="cards">
+<div class="services">
 
 <div class="card">
 <h3>Transformer Testing</h3>
-<img src="Transformer-Testing.jpg" class="image">
+<img src="Transformer-Testing.jpg">
 </div>
 
 <div class="card">
 <h3>Relay Testing</h3>
-<img src="Relay-Testing.jpg" class="image">
+<img src="Relay-Testing.jpg">
 </div>
 
 <div class="card">
 <h3>CT/PT Testing</h3>
-<img src="CT&P-Testing.jpg" class="image">
+<img src="CT&P-Testing.jpg">
 </div>
 
 <div class="card">
 <h3>Industries & Maintenance</h3>
-<img src="Industries&Maintenance.jpg" class="image">
+<img src="Industries&Maintenance.jpg">
 </div>
 
 </div>
 
 </section>
 
-<section>
+<section id="materials">
 
-<h2>Material Supply</h2>
+<h2 class="section-title">Material Supply</h2>
 
-<img src="Material-Supply 1.jpg" class="image">
-<br><br>
+<div class="gallery">
 
-<img src="Material-Supply 2.jpg" class="image">
-<br><br>
+<img src="Material-Supply 1.jpg">
 
-<img src="Material-Supply 3.jpg" class="image">
+<img src="Material-Supply 2.jpg">
 
-</section>
+<img src="Material-Supply 3.jpg">
 
-<section id="clients">
-<h2>Our Clients</h2>
+<img src="Safety-Material.jpg">
 
-<img src="Clients.jpg" class="image">
+</div>
 
 </section>
 
+<section id="clients" class="clients">
+
+<h2 class="section-title">Major Clients</h2>
+
+<img src="Clients.jpg">
+
+</section>
 <section id="contact" class="contact">
 
-<h2 style="color:white">Contact Us</h2>
+<h2 class="section-title" style="color:white;">
+Contact Us
+</h2>
 
-<img src="Contact&Company Profile.jpg"
-class="image">
+<img src="Contact&Company Profile.jpg">
 
-<p><br>
-📞 +91 7874894011<br>
-📞 +91 7874904011<br>
-📞 +91 9898376278<br><br>
+<h3>ALPHA ENGINEERS</h3>
 
+<br>
+
+<p>
+📞 +91 7874894011
+</p>
+
+<p>
+📞 +91 7874904011
+</p>
+
+<p>
+📞 +91 9898376278
+</p>
+
+<br>
+
+<p>
 📧 alpha.engineers13@gmail.com
+</p>
+
+<br>
+
+<p>
+Head Office:
+S-33, Vatsalya Status,
+Railway Station Road,
+Kadi, Mehsana,
+Gujarat - 382715
 </p>
 
 </section>
 
 <a class="whatsapp"
-href="https://wa.me/917874894011">
-WhatsApp
+href="https://wa.me/917874894011"
+target="_blank">
+WhatsApp Us
 </a>
+
+<!-- AI Chatbot Placeholder -->
+<!-- Future Botpress Code Paste Here -->
+
+<footer style="
+background:#001f3f;
+color:white;
+text-align:center;
+padding:20px;
+">
+
+© 2026 ALPHA ENGINEERS
+<br>
+Testing • Commissioning • Maintenance • Material Supply
+
+</footer>
 
 </body>
 </html>
